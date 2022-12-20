@@ -4,13 +4,23 @@ const keycloak = require('keycloak-connect')
 let _keycloak
 
 var keycloakConfig = {
-    clientId: 'smiley-microservice',
+    clientId: 'dev_client',
     bearerOnly: true,
-    serverUrl: 'http://localhost:8080',
-    realm: 'smiley',
-    credentials: {
-        secret: 'l64J3s2s3QA9CIqfdFgGlY7b5vL4bbul'
-    }
+    publicClient: true,
+    confidentialPort: 0,
+    sslRequired: "external",
+    // disableTrustManager: true,
+    // allowAnyHostname: true,
+    // sslRequired: "external",
+    // useResourceRoleMappings: true,
+    // enableCors: true,
+    // corsAllowedMethods: "POST, PUT, DELETE, GET",
+    // exposeToken: true,
+    // verifyTokenAudience: true,
+    serverUrl: 'http://192.168.5.165:8080/',
+    authServerUrl: "http://192.168.5.165:8080/",
+    realm: 'Dev',
+
 };
 
 function initKeycloak(){

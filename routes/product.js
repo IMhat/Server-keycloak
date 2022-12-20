@@ -58,7 +58,7 @@ productRouter.post("/api/rate-product", keycloak.protect(), async (req, res) => 
   }
 });
 
-productRouter.get("/api/deal-of-day",keycloak.protect(), async (req, res) => {
+productRouter.get("/api/deal-of-day", keycloak.protect(), async (req, res) => {
   try {
     let products = await Product.find({});
 
